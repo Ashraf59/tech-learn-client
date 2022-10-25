@@ -8,6 +8,7 @@ const Home = () => {
     return (
         <div>
             <h2>Home course page: {allCourses.length}</h2>
+            <div>
             {
                 allCourses.map(course => <CourseDetails
                 key = {course.id}
@@ -15,6 +16,7 @@ const Home = () => {
                 
                 ></CourseDetails>)
             }
+            </div>
         </div>
     );
 };

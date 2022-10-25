@@ -13,12 +13,10 @@ const Header = () => {
           <Link
           style={{textDecoration: 'none'}}
             to='/'
-            aria-label='Skill Test'
-            title='Skill Test'
-            className='inline-flex items-center'
+            
           >
             <img className= "me-3" src={image} alt="" />
-            <span className='text-drak fw-bold fs-4 tracking-wide'>
+            <span className='text-info fw-bold fs-4'>
               Tech Learn
             </span>
           </Link>
@@ -29,7 +27,13 @@ const Header = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav  mb-2 mb-lg-0 mx-5 ms-auto">
                 <li className="nav-item mx-4">
-                  <a className="nav-link text-dark" aria-current="page" href="#home">Home</a>
+                <Link
+          style={{textDecoration: 'none', color: 'black', alignItems: 'center'}}
+            to='/home'>
+            <span>
+              Home
+            </span>
+          </Link>
                 </li>
                 <li className="nav-item mx-4">
                   <a className="nav-link text-dark" href="#online-course">Online Courses</a>
@@ -45,10 +49,10 @@ const Header = () => {
                 </li>
               </ul>
               <form className="d-flex">
-                <button type="button" className="btn btn-outline-primary btn-lg me-2">Register</button>
+                <button type="button" className="btn btn-outline-info btn-lg me-2">Register</button>
               </form>
               <form className="d-flex">
-                <button type="button" className="btn btn-outline-primary btn-lg">Login</button>
+                <button type="button" className="btn btn-outline-info btn-lg">Login</button>
               </form>
             </div>
           </div>

@@ -3,14 +3,16 @@ import Main from "../../layout/Main";
 import Category from "../../Pages/Category/Category";
 import Courses from "../../Pages/Courses/Courses";
 import Home from "../../Pages/Home/Home";
+import ErrorPage from "../../Shared/ErrorPage/ErrorPage";
 
 export const routes = createBrowserRouter([
     {
         path: ('/'),
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
-                path: ('/'),
+                path: ('/home'),
                 element: <Home></Home>,
                 loader: () => fetch('http://localhost:5000/courses')
             },
