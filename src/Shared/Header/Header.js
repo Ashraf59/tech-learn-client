@@ -11,6 +11,7 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg navbar-light bg-white  p-4 sticky-top">
           <div className="container d-flex justify-content-center">
           <Link
+          style={{textDecoration: 'none'}}
             to='/'
             aria-label='Skill Test'
             title='Skill Test'
@@ -44,7 +45,7 @@ const Header = () => {
                 </li>
               </ul>
               <form className="d-flex">
-                <button type="button" className="btn btn-outline-primary btn-lg">Register</button>
+                <button type="button" className="btn btn-outline-primary btn-lg me-2">Register</button>
               </form>
               <form className="d-flex">
                 <button type="button" className="btn btn-outline-primary btn-lg">Login</button>
