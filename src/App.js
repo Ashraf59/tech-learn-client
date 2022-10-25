@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router = {routes}></RouterProvider>
+      <h1>Teh Learners</h1>
     </div>
   );
 }
