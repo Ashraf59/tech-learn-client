@@ -52,16 +52,16 @@ const Header = () => {
                 <li className="nav-item mx-4">
                 <Link
                style={{textDecoration: 'none', color: 'black', alignItems: 'center'}}
-                 to='/blog'>
+                 to='/course'>
             <span>
-              Courses
+              Course
             </span>
           </Link>
                 </li>
                 <li className="nav-item mx-4">
                 <Link
                style={{textDecoration: 'none', color: 'black', alignItems: 'center'}}
-                 to='/blog'>
+                 to='/faq'>
             <span>
               FAQ
             </span>

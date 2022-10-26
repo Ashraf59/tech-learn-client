@@ -8,22 +8,7 @@ const Main = () => {
     return (
         <div>
          <Header></Header>
-          <Container>
-             
-             <Row>
-             <Col lg = "4 d-none d-lg-block">
-             <LeftSideNav></LeftSideNav>
-             </Col>
-             <Col lg = "8">
-             <Outlet>
- 
-             </Outlet>
-             </Col>
-             
-             </Row>
-             
-         </Container>
-         
+         <Outlet></Outlet>
         </div>
      );
 };

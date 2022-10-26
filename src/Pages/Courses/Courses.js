@@ -4,7 +4,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const Courses = () => {
     const readMore = useLoaderData();
-    const {category_id, instructor, details, image_url, rating, title} = readMore
+    const {category_id, details, image_url, title} = readMore
     return (
         <Card>  
           <Card.Img variant="top" src={image_url} />
@@ -15,7 +15,7 @@ const Courses = () => {
               
             </Card.Text>
             <Link to = {`/category/${category_id}`}>
-            <Button className = "text-white fs-5" variant="info">All the news in this category</Button>
+            <Button className = "text-white fs-5" variant="info">All the courses in this category</Button>
 
             </Link>
           </Card.Body>
