@@ -42,7 +42,13 @@ const Header = () => {
                   <a className="nav-link text-dark" href="#faq">FAQ</a>
                 </li>
                 <li className="nav-item mx-4">
-                  <a className="nav-link text-dark" href="#about ">About Us</a>
+                <Link
+               style={{textDecoration: 'none', color: 'black', alignItems: 'center'}}
+                 to='/blog'>
+            <span>
+              Blog
+            </span>
+          </Link>
                 </li>
                 <li className="nav-item mx-4">
                   <a className="nav-link text-dark" href="#enroll">Enroll</a>
