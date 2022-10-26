@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth';
+import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth';
 import app from '../firebase/firebase.confiq'
 
 export const AuthContext = createContext();
@@ -15,6 +15,12 @@ const [loading, setLoading] = useState(true);
     const providerLogin = (provider) => {
         setLoading(true)
         return signInWithPopup(auth, provider)
+    }
+
+    const githubProviderLogin = (provider) => {
+        setLoading(true)
+        return signInWithPopup(auth, provider)
+
     }
 
     const logOut = () => {
@@ -64,7 +70,8 @@ const [loading, setLoading] = useState(true);
          providerLogin,
          logOut, createUser,
          signIn, updateUserProfile,
-         verifyEmail, setLoading
+         verifyEmail, setLoading,
+         githubProviderLogin
     }
     
     return (

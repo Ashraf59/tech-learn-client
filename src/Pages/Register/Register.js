@@ -1,3 +1,4 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { FaGithub, FaGoogle, FaRegUser, FaTwitter, } from 'react-icons/fa';
@@ -7,8 +8,11 @@ import './Register.css';
 
 
 const Register = () => {
-    const {createUser, updateUserProfile, verifyEmail} = useContext(AuthContext)
+    const {createUser, updateUserProfile, verifyEmail, providerLogin, githubProviderLogin} = useContext(AuthContext)
 const [error, setError] = useState('');
+const googleProvider = new GoogleAuthProvider()
+const githubProvider = new GithubAuthProvider();
+
 // const [accepted, setAccepted] = useState(false)
 
     const handleSubmit = (event) => {
@@ -37,6 +41,26 @@ const [error, setError] = useState('');
             setError(error.message)
         
         })
+    }
+
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+        .then(result =>{
+            const user = result.user;
+            console.log(user)
+        })
+
+        .catch(error => console.error(error))
+    }
+
+    const handleGithubSignIn = () => {
+        githubProviderLogin(githubProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user)
+        })  
+        
+        .catch(error => console.error(error))
     }
 
     const handleUpdateUserProfile = (name, photoURL) => {
@@ -91,12 +115,12 @@ const [error, setError] = useState('');
                         <span>Sign Up with social accounts</span>
                     </div>
                     <div className='text-center'>
-                        <FaGithub className='me-3 font'/>
-                        <FaGoogle className='me-3 font'/>
+                        <FaGithub onClick={handleGithubSignIn} className='me-3 font'/>
+                        <FaGoogle onClick={handleGoogleSignIn} className='me-3 font'/>
                         <FaTwitter className='font'/>
                     </div>
                     <p className='m-t-17 text-center'>
-                        Already have an account yet?{' '}
+                        Already have an account? Please{' '}
                         <Link to='/login' className='hover:underline text-gray-600'>
                             Sign In
                         </Link>

@@ -78,9 +78,9 @@ const Login = () => {
                         <FaTwitter className='font'/>
                     </div>
                     <p className='m-t-17 text-center'>
-                        Already have an account yet?{' '}
-                        <Link to='/login' className='hover:underline text-gray-600'>
-                            Sign In
+                        Haven't you anccount?, please{' '}
+                        <Link to='/register' className='hover:underline text-gray-600'>
+                            Register Now
                         </Link>
                     </p>
                     

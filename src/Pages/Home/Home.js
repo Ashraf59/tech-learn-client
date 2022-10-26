@@ -7,7 +7,7 @@ const Home = () => {
     const allCourses = useLoaderData();
     return (
         <div>
-            <h2>Home course page: {allCourses.length}</h2>
+            <h2>Our All Courses</h2>
             <div>
             {
                 allCourses.map(course => <CourseDetails
