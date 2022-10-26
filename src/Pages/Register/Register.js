@@ -1,15 +1,67 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { FaGithub, FaGoogle, FaRegUser, FaTwitter, } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider';
 import './Register.css';
 
 
 const Register = () => {
+    const {createUser, updateUserProfile, verifyEmail} = useContext(AuthContext)
+const [error, setError] = useState('');
+// const [accepted, setAccepted] = useState(false)
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photoURL = form.photoURL.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            form.reset();
+            setError('');
+            console.log(user)
+            handleUpdateUserProfile(name, photoURL)
+            handleEmailVarification();
+            // toast.success('Please verify your email')
+
+            
+
+        })
+        .catch(error => {
+            console.error(error)
+            setError(error.message)
+        
+        })
+    }
+
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL 
+        }
+        updateUserProfile(profile)
+        .then(() => {})
+        .catch(error => console.error(error))
+    }
+
+    const handleEmailVarification = () => {
+        verifyEmail()
+        .then(() => {})
+        .catch(error => console.error(error))
+    }
+
+    // const handleAccepted = event => {
+    //     setAccepted(event.target.checked)
+    // }
     return (
         <div className="container-login">
             <div className="wrap-login p-t-50 p-b-90 p-l-50 p-r-50">
-                <form className="login-form flex-sb flex-w" action="" method="post">
+                <form onSubmit={handleSubmit} className="login-form flex-sb flex-w" action="" method="post">
                     <span className="login-form-title">
                         <FaRegUser className='user'/>
                         <p className='text-center fs-3'>Create a new account</p>
@@ -30,7 +82,7 @@ const Register = () => {
                     </div>
                     <div className="container-login-form-btn m-t-17">
                         <div className="w-full text-center">
-                            <Button className='container-login-form-btn' variant="primary" type="submit">
+                            <Button className='container-login-form-btn bg-info' variant="primary" type="submit">
                                 Register
                             </Button>
                         </div>
@@ -48,8 +100,10 @@ const Register = () => {
                         <Link to='/login' className='hover:underline text-gray-600'>
                             Sign In
                         </Link>
-                    .
                     </p>
+                    
+                      <p className='text-danger'>{error}</p>
+                     
                 </form>
             </div>
         </div>

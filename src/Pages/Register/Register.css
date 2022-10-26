@@ -8,9 +8,10 @@ input{
     border:none;
 }
 .container-login{
-    width:100%;
-    min-height:100vh;
+    width:70%;
+    height:90%;
     display:flex;
+    margin: 40px auto;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -30,7 +31,8 @@ input{
     height:100%;
     top:0;
     left:0;
-    background-color: #b6c7bc;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* background-color: #b6c7bc; */
 }
 .wrap-login{
     width:500px;
@@ -42,17 +44,15 @@ input{
     width:100%;
 }
 .user{
-    font-size:50px;
-    color:#403866;
+    font-size:20px;
+    color:#0fd4f2;
     line-height: 1.2;
     text-align: center;
     width:100%;
     display:block;
     margin-bottom:5px;
 }
-.user:hover{
-    color:#00b665;
-}
+
 .wrap-input{
     width:100%;
     position: relative;
@@ -79,7 +79,7 @@ input{
     top:-1px;
     left:-1px;
     pointer-events: none;
-    border:2px solid #00b665;
+    border:2px solid #0fd4f2;
     border-radius: 8px;
     visibility: hidden;
     opacity: 0;
