@@ -6,7 +6,8 @@ const Courses = () => {
     const readMore = useLoaderData();
     const {category_id, details, image_url, title} = readMore
     return (
-        <Card>  
+        <div className='shadow p-4 mb-4 rounded-3 w-50 m-auto'>
+                  <Card>  
           <Card.Img variant="top" src={image_url} />
           <Card.Body>
             <Card.Title>{title}</Card.Title>
@@ -14,12 +15,13 @@ const Courses = () => {
                {details}
               
             </Card.Text>
-            <Link to = {`/category/${category_id}`}>
-            <Button className = "text-white fs-5" variant="info">All the courses in this category</Button>
+            <Link to = {`/checkout/${category_id}`}>
+            <Button className = "text-white fs-5" variant="info">Get Premeum Access</Button>
 
             </Link>
           </Card.Body>
           </Card>
+        </div>
         
       );
 };
