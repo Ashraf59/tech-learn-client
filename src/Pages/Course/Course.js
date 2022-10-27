@@ -6,7 +6,7 @@ const Course = () => {
     const allCourses = useLoaderData();
     return (
         <div>
-            <h2>Our All Courses</h2>
+            <h2 className='text-secondary text-center'>Our All Courses</h2>
             <div>
                 {
                     allCourses.map(course => <CourseDetails
