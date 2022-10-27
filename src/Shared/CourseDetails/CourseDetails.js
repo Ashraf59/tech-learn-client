@@ -1,11 +1,15 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaStar  } from 'react-icons/fa';
+import Pdf from 'react-to-pdf';
+
 
 
 const CourseDetails = ({course}) => {
     const {title, image_url, details, instructor, _id, rating} = course;
+    const ref = React.createRef()
+
     return (
         <div className='shadow p-4 mb-4 rounded-3'>
             <img className = "img-fluid rounded-3" src={image_url} alt="" />
@@ -39,14 +43,26 @@ const CourseDetails = ({course}) => {
             
 
             </div>
+
+
             
             </div>
-                
+
+
 
 
             </div>
             
 
+            <div>
+            <Pdf targetRef={ref} filename="course-example.pdf">
+                                {({ toPdf }) => <Button className="btn-design px-2 mt-3 bg-info" onClick={toPdf}>Download PFD File</Button>}
+                            </Pdf>
+                            <div className='' ref={ref}>
+                                <span className='text-white'>f</span>
+                            </div>
+
+            </div>
         </div>
     );
 };

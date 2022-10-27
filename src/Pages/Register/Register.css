@@ -36,7 +36,7 @@ input{
 }
 .wrap-login{
     width:500px;
-    background-color: gray;
+    background-color: #d6ecf0;
     border-radius: 10px;
     position: relative;
 }
