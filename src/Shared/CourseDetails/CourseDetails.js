@@ -11,7 +11,7 @@ const CourseDetails = ({course}) => {
     const ref = React.createRef()
 
     return (
-        <div className=' p-4 mb-4 rounded-3'>
+        <div className=' p-4 mb-4 rounded-3 col-sm-12'>
             <img className = "img-fluid rounded-3" src={image_url} alt="" />
             <h2>{title}</h2>
             <>{details.length > 250 ?

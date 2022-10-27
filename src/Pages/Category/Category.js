@@ -6,7 +6,7 @@ const Category = () => {
 
     const courses = useLoaderData();
     return (
-        <div className='shadow p-4 mb-4 rounded-3 w-50 m-auto'>
+        <div className='shadow p-4 mb-4 rounded-3 w-50 m-auto col-sm-12'>
             <h2 className='text-secondary text-center'>Popular Course</h2>
             {
                 courses.map(course => <CourseDetails

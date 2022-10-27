@@ -5,7 +5,7 @@ import CourseDetails from '../../Shared/CourseDetails/CourseDetails';
 const Course = () => {
     const allCourses = useLoaderData();
     return (
-        <div>
+        <div className='img-fluid'>
             <h2 className='text-secondary text-center'>Our All Courses</h2>
             <div>
                 {

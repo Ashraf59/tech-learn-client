@@ -8,7 +8,7 @@ const Courses = () => {
     return (
         <div className='shadow p-4 mb-4 rounded-3 w-50 m-auto'>
                   <Card>  
-          <Card.Img variant="top" src={image_url} />
+          <Card.Img variant="top" className = "img-fluid" src={image_url} />
           <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Text>
