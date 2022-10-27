@@ -1,0 +1,14 @@
+/* Toggle Theme */ 
+.dark {
+    background-color: #333;
+    color: #fff;
+}
+.light {
+    background-color: #fff;
+    color: #333;
+}
+.toggle{
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+}

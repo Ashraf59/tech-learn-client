@@ -8,14 +8,14 @@ input{
     border:none;
 }
 .container-login{
-    width:70%;
-    height:90%;
+    width:40%;
+    min-height:30%;
     display:flex;
     margin: 40px auto;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding:15px;
+    padding:10px;
     background-position:center;
     background-size: cover;
     background-repeat: no-repeat;

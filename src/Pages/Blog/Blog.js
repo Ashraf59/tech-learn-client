@@ -5,7 +5,7 @@ import './Blog.css';
 const Blog = () => {
     return (
         <div>
-            <h2 className="font-semibold text-center mt-5 mb-8">Frequently Asked Questions</h2>
+            <h2 className="font-semibold text-center mt-5 mb-8">Our Latest Blog Post</h2>
             <div>
             <Accordion className='accordion'>
                 <Accordion.Item eventKey="0">
